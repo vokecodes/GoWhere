@@ -13,5 +13,9 @@
     "ejs": "^2.6.1",
     "express": "^4.17.1",
     "mongoose": "^5.5.15"
+  },
+  "devDependencies": {
+    "stylelint-config-recommended": "^2.2.0",
+    "tailwindcss": "^1.0.4"
   }
 }

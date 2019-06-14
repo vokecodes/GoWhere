@@ -1,0 +1,19 @@
+.inverted.menu {
+  margin-bottom: 0;
+  border-radius: unset;
+}
+
+.pusher .masthead {
+  padding: 120px;
+}
+
+.ui.pusher.header {
+  text-transform: capitalize;
+}
+
+.p-60-0 {
+  padding: 5em 0;
+}
+.ui.cards > .card > .image > img {
+  height: 14em !important;
+}
