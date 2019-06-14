@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Go Where
+      </h1>
+      <a href="/tours/new" class="ui huge primary button">
+        Create Tour <i class="right arrow icon"></i>
+      </a>
+    </div>
+  </div>
+  <div class="ui container p-60-0">
+    <h1>Create a tour</h1>
+    <form class="ui form" action="/tours" method="post">
+      <div class="field">
+        <label for="title"> Title</label>
+        <input type="text" name="tour[titile]" id="" />
+      </div>
+      <div class="field">
+        <label for="image"> Image</label>
+        <input type="text" name="tour[image]" id="" />
+      </div>
+      <div class="field">
+        <label for="price"> Price </label>
+        <input type="text" name="tour[price]" id="" />
+      </div>
+      <div class="field">
+        <label for="description"> Description </label>
+        <textarea name="tour[description]" id="" cols="30" rows="5"></textarea>
+      </div>
+      <input type="button" class="ui primary basic button" value="Submit" />
+    </form>
+  </div>
+</div>
+
+<% include ./partials/footer %>
