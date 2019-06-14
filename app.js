@@ -62,4 +62,12 @@ app.get("/tours/new", (req, res) => {
   res.render("new");
 });
 
+// Create Route
+app.post("/tours", (req, res) => {
+  Tour.create(req.body.tour, (err, newTour) => {
+    if (err) console.log(err);
+    else res.redirect("/tours");
+  });
+});
+
 app.listen(port, () => console.log(`GoWhere app is listening at ${port}`));

@@ -16,19 +16,25 @@
     <form class="ui form" action="/tours" method="post">
       <div class="field">
         <label for="title"> Title</label>
-        <input type="text" name="tour[titile]" id="" />
+        <input required type="text" name="tour[titile]" id="" />
       </div>
       <div class="field">
         <label for="image"> Image</label>
-        <input type="text" name="tour[image]" id="" />
+        <input required type="text" name="tour[image]" id="" />
       </div>
       <div class="field">
         <label for="price"> Price </label>
-        <input type="text" name="tour[price]" id="" />
+        <input required type="text" name="tour[price]" id="" />
       </div>
       <div class="field">
         <label for="description"> Description </label>
-        <textarea name="tour[description]" id="" cols="30" rows="5"></textarea>
+        <textarea
+          required
+          name="tour[description]"
+          id=""
+          cols="30"
+          rows="5"
+        ></textarea>
       </div>
       <input type="button" class="ui primary basic button" value="Submit" />
     </form>
