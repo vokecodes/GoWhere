@@ -2,11 +2,13 @@ const express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
   bodyParser = require("body-parser"),
-  port = 3000;
+  methodOverride = require("method-override");
+port = 3000;
 
 // App Config
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 
 // Mongoose Setup & Config
@@ -78,11 +80,27 @@ app.get("/tours/:id", (req, res) => {
   });
 });
 
-// Edite Route
+// Edit Route
 app.get("/tours/:id/edit", (req, res) => {
   Tour.findById(req.params.id, (err, foundTour) => {
     if (err) console.log(err);
     else res.render("edit", { tour: foundTour });
+  });
+});
+
+// Update Route
+app.put("/tours/:id", (req, res) => {
+  Tour.findByIdAndUpdate(req.params.id, req.body.tour, (err, updateTour) => {
+    if (err) console.log(err);
+    else res.redirect("/tours/" + req.params.id);
+  });
+});
+
+// Delete Route
+app.delete("/tours/:id", (req, res) => {
+  Tour.findByIdAndRemove(req.params.id, err => {
+    if (err) console.log(err);
+    else res.redirect("/");
   });
 });
 

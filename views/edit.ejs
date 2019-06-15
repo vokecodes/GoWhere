@@ -13,7 +13,11 @@
   </div>
   <div class="ui container p-60-0">
     <h1>Edit <%= tour.title %></h1>
-    <form class="ui form" action="/tours" method="post">
+    <form
+      class="ui form"
+      action="/tours/<%= tour.id %>/?_method=PUT"
+      method="post"
+    >
       <div class="field">
         <label for="title"> Title</label>
         <input
@@ -41,7 +45,7 @@
           type="text"
           name="tour[price]"
           id=""
-          value="<%= tour.image %>"
+          value="<%= tour.price %>"
         />
       </div>
       <div class="field">

@@ -33,6 +33,11 @@
           <a href="/tours/<%= tour.id %>/edit" class="ui primary basic button">
             Edit Tour</a
           >
+          <form action="/tours/<%= tour.id %>?_method=DELETE" method="post">
+            <button class="ui primary basic button">
+              Delete Tour
+            </button>
+          </form>
         </div>
       </div>
     </div>
