@@ -12,33 +12,35 @@
     </div>
   </div>
   <div class="ui container p-60-0">
-      <div class="ui link cards">
-        <% tours.forEach((tour) => { %>
-         <div class="card">
-            <div class="image">
-              <img src="<%= tour.image %>" />
-            </div>
-            <div class="content">
-              <div class="header"><%= tour.title %></div>
-              <div class="meta">
-                <a><%= tour.price %></a>
-              </div>
-              <div class="description">
-                <%= tour.description.substring(0, 200) %>...
-              </div>
-            </div>
-            <div class="extra content">
-              <span class="right floated">
-                <%= tour.Date.toDateString() %>
-              </span>
-              <span>
-                <a href="/tours/<%= tour.id %>" class="ui primary basic button"> View details</a>
-            </div>
+    <div class="ui link cards">
+      <% tours.forEach((tour) => { %>
+      <div class="card">
+        <div class="image">
+          <img src="<%= tour.image %>" />
+        </div>
+        <div class="content">
+          <div class="header"><%= tour.title %></div>
+          <div class="meta">
+            <a><%= tour.price %></a>
           </div>
-          <% }) %>
+          <div class="description">
+            <%= tour.description.substring(0, 200) %>...
+          </div>
+        </div>
+        <div class="extra content">
+          <span class="right floated">
+            <%= tour.Date.toDateString() %>
+          </span>
+          <span>
+            <a href="/tours/<%= tour.id %>" class="ui primary basic button">
+              View details</a
+            >
+          </span>
+        </div>
       </div>
+      <% }) %>
+    </div>
   </div>
-
 </div>
 
 <% include ./partials/footer %>

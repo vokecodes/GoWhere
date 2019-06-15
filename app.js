@@ -78,4 +78,12 @@ app.get("/tours/:id", (req, res) => {
   });
 });
 
+// Edite Route
+app.get("/tours/:id/edit", (req, res) => {
+  Tour.findById(req.params.id, (err, foundTour) => {
+    if (err) console.log(err);
+    else res.render("edit", { tour: foundTour });
+  });
+});
+
 app.listen(port, () => console.log(`GoWhere app is listening at ${port}`));
