@@ -13,7 +13,8 @@ app.set("view engine", "ejs");
 
 // Mongoose Setup & Config
 mongoose.connect("mongodb://localhost:27017/gowhere", {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 // GoWhere Schema
