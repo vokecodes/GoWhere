@@ -70,4 +70,12 @@ app.post("/tours", (req, res) => {
   });
 });
 
+// Show Route
+app.get("/tours/:id", (req, res) => {
+  Tour.findById(req.params.id, (err, foundTour) => {
+    if (err) console.log(err);
+    else res.render("details", { tour: foundTour });
+  });
+});
+
 app.listen(port, () => console.log(`GoWhere app is listening at ${port}`));

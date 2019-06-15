@@ -1,0 +1,39 @@
+<% include ./partials/header %>
+
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Go Where
+      </h1>
+      <a href="/tours/new" class="ui huge primary button">
+        Create Tour <i class="right arrow icon"></i>
+      </a>
+    </div>
+  </div>
+  <div class="ui container p-60-0">
+    <div class="ui item">
+      <div class="item">
+        <div class="image">
+          <img src="<%= tour.image %>" />
+        </div>
+        <div class="content">
+          <h2 class="header"><%= tour.title %></h2>
+          <div class="meta">
+            <span><%= tour.price %></span>
+          </div>
+          <div class="description">
+            <p><%= tour.description %></p>
+          </div>
+          <div class="extra">
+            <span class="right floated">
+              <%= tour.Date.toDateString() %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ./partials/footer %>
